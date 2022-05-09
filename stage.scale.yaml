@@ -1,0 +1,4 @@
+scale:
+  - host_var: APP_STAGE_HOST
+    services:
+      employee-details: 4

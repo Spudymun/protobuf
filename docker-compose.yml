@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  employee-details:
+    image: $IMAGE_NAME
+    restart: unless-stopped
+    env_file:
+      - env-file.env
+    expose:
+      - 9292
+    volumes:
+      - ./log:/usr/src/app/log
+    command:
+      [
+        "bundle",
+        "exec",
+        "rackup",
+        "-p",
+        "9292",
+        "config.ru"
+      ]
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

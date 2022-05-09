@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "irb"
+require "logger"
+require "strum/service"
+require "strum/pipe"
+require "strum/json"
+require "strum/esb"
+require "./config/env"
+unless defined?(Unreloader)
+  require "rack/unreloader"
+  Unreloader = Rack::Unreloader.new(logger: Logger.new($stdout),
+                                    reload: true) { ProtoApp }
+end
+
+Unreloader.require("proto")
+Unreloader.require("services")
+
+IRB.start

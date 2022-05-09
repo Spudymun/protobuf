@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package Occupation;
+import "proto/common/response.proto";
+import "google/protobuf/wrappers.proto";
+
+service Router {
+  rpc EventProtoSend(Occupations) returns (Response) {}
+  rpc EventProtoSendd(Occupations) returns (Response) {}
+}
+
+message Occupations {
+  repeated Occupation occupations = 1;
+}
+
+message Occupation {
+  string is_for_saudi_only = 2;
+  string is_valid_for_istiqdam = 3;
+  string qsim_code = 4;
+  string jza_code = 5;
+  string bab_code = 6;
+  string fsl_code = 7;
+  string mhn_code = 8;
+  string mst_code = 9;
+  string can_change_online = 10;
+  string created_on = 11;
+  string modified_on = 12;
+  string is_wp_required = 13;
+  string is_gov_support_ewv = 14;
+  string is_engineering_job = 15;
+  string is_valid_for_istiqdam1_5 = 16;
+  string is_home_job = 17;
+  string is_medical_job = 18;
+  string nic_code = 19;
+  string is_accountant_job = 20;
+  string is_allowed_for_monshaat_visa = 21;
+  string is_blocked_for_seasonal_visas = 22;
+  string nic_old_code = 23;
+  string job_group_id = 24;
+  string is_gender_required = 25;
+  string saudization_management = 26;
+  string saudization_action_type = 27;
+  string minimum_wage = 28;
+}

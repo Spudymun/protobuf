@@ -1,0 +1,10 @@
+scale:
+  - host_var: APP_PROD_HOST
+    services:
+      employee-details: 6
+  - host_var: APP_PROD_HOST_2
+    services:
+      employee-details: 6
+  - host_var: APP_PROD_HOST_3
+    services:
+      employee-details: 6

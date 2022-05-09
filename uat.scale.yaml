@@ -1,0 +1,7 @@
+scale:
+  - host_var: APP_UAT_HOST
+    services:
+      employee-details: 4
+  - host_var: APP_UAT_HOST_2
+    services:
+      employee-details: 4
