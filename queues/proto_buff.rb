@@ -8,8 +8,8 @@ module Queues
   class ProtoBuff
     include Strum::Esb::Handler
 
-    json false
-    protobuf_service Occupation::Router::Service
+    json false # disable content-type: json
+    protobuf_service Occupation::Router::Service # Paste here our interface service
     from_queue "proto",
                bindings: { event: %w[proto/send proto/sendd] }
 
